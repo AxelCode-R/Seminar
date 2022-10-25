@@ -1,6 +1,8 @@
 ---
 title: "Seminar Themenwahl"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 date: '2022-10-18'
 ---
 
@@ -31,7 +33,7 @@ fn <- function(pos){
 }
 ```
 Die nachfolgende Simulation zeigt die Bewegungen aller Particle im Schwarm:
-```{r, echo=F, warning=F, message=F}
+```{r, echo=F, warning=F, message=F, include = knitr::is_html_output()}
 
 library(plotly)
 library(dplyr)
@@ -386,7 +388,9 @@ fig <- plot_ly() %>%
 fig
 
 ```
-
+```{r, echo=!knitr::is_html_output(), warning=F, message=F, include = !knitr::is_html_output()}
+# Plot ist leider nur in der HTML Version möglich
+```
 Informationen zur Bedienung:  
 - Linke und Rechte Maustate halten und dann die Maus bewegen kann genutzt werden, um die Kamera im Raum zu drehen.  
 - Das Mausrad kann zum Zoomen verwendet werden.  
